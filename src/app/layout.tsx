@@ -2,7 +2,7 @@
 
 import { Inter } from "next/font/google";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Context from "./components/appcontext";
 import "./globals.css";
 
@@ -69,7 +69,7 @@ export default function RootLayout({
             loading,
           }}
         >
-          {children}
+          <Suspense>{children}</Suspense>
         </Context.Provider>
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { FormEvent, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import Context from "../components/appcontext";
 
@@ -12,7 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleRegister = (e) => {
+  const handleRegister = (e: FormEvent) => {
     e.preventDefault();
 
     if (!EMAIL_REGEX.test(email)) {

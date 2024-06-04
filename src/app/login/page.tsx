@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email validation regex
 
@@ -10,7 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: FormEvent) => {
     e.preventDefault();
 
     if (!EMAIL_REGEX.test(email)) {

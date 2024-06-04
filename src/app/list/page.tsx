@@ -55,6 +55,7 @@ export default function List() {
               ✏️
             </div>
           </h1>
+          <p>lorem ipsum dummy text </p>
           <Grid list={userData.movies} showSeen={true} />
         </div>
       </div>
